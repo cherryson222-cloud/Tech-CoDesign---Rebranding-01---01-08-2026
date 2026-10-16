@@ -1,0 +1,157 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tech CoDesign — Criação de Sites e Identidades Visuais</title><meta name="description" content="Tech CoDesign: criação de sites seguros e responsivos e identidades visuais sob medida para o seu negócio."><meta name="theme-color" content="#F9F2EA"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236E1E22'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-weight='800' font-size='30' fill='%23F9F2EA'%3ETC%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Quicksand:wght@400;500;600;700;800&family=Playfair+Display:wght@800&display=swap" rel="stylesheet"><style>  :root{    --cream:#F9F2EA;    --cream-2:#EFE8D8;    --ink:#241512;    --wine:#6E1E22;    --wine-deep:#51070E;    --wine-soft:#8B3A3D;    --red-vivid:#E4342B;    --paper:#FFFFFF;    --line:rgba(36,21,18,0.14);    --serif: 'Fraunces', serif;    --sans: 'Quicksand', sans-serif;    }
+  *{margin:0;padding:0;box-sizing:border-box;}  html{scroll-behavior:smooth;}  body{    background:var(--cream);    color:var(--ink);    font-family:var(--sans);    -webkit-font-smoothing:antialiased;    overflow-x:hidden;  }  img{max-width:100%;display:block;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}  a{color:inherit;text-decoration:none;}  ul{list-style:none;}
+  @media (prefers-reduced-motion: reduce){    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 48px;}
+  /* ---------- BUTTONS ---------- */  .btn{    display:inline-flex;align-items:center;justify-content:center;    background:var(--wine);color:var(--paper);    padding:13px 26px;border-radius:100px;    font-size:11.5px;letter-spacing:0.09em;text-transform:uppercase;font-weight:600;    border:1px solid var(--wine);    cursor:pointer;    transition:background .25s ease, color .25s ease, transform .2s ease;    white-space:nowrap;  }  .btn:hover{background:transparent;color:var(--wine);transform:translateY(-1px);}
+  /* ---------- HERO ---------- */  .hero{    width:100%;    background:var(--cream);    line-height:0;  }  .hero-img{    display:block;    width:100%;    height:auto;  }
+  /* ---------- PORTFOLIO ---------- */
+  .portfolio{background:var(--wine-deep);padding:90px 0 110px;}
+  .services{background:var(--cream);padding:90px 0 100px;}
+  .portfolio-head{text-align:center;margin-bottom:52px;}
+  .portfolio-title{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(38px,5.4vw,64px);line-height:1.1;letter-spacing:.01em;color:#fff;}
+  .portfolio-sub{margin-top:12px;font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(15px,1.5vw,18px);line-height:1.5;color:#fff;opacity:.95;}
+  .portfolio-wide{width:100%;max-width:1480px;margin:0 auto;padding:0 clamp(16px,2.6vw,40px);}
+  .project-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,1.7vw,26px);}
+  .portfolio-card-body{padding:clamp(16px,1.5vw,24px) clamp(18px,1.7vw,26px) clamp(20px,2vw,30px);}
+  .portfolio-card-tag{font-size:clamp(10.5px,.85vw,12px);}
+  .portfolio-card-title{font-size:clamp(17px,1.5vw,22px);}
+  .portfolio-card-desc{font-size:clamp(12.5px,1vw,14px);}
+  .portfolio-card{background:var(--cream);border-radius:4px;overflow:hidden;box-shadow:0 22px 44px -22px rgba(81,7,14,0.55);transition:transform .35s ease;}
+  .portfolio-card:hover{transform:translateY(-6px);}
+  .portfolio-card-img{width:100%;aspect-ratio:4/5;overflow:hidden;}
+  .portfolio-card-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s ease;}
+  .portfolio-card:hover .portfolio-card-img img{transform:scale(1.05);}
+  .portfolio-card-img.img-fit img{object-fit:contain;background:var(--cream);padding:14px;}
+  .portfolio-card-tag{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--wine);font-weight:600;margin-bottom:8px;display:block;}
+  .portfolio-card-title{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--ink);margin-bottom:6px;}
+  .portfolio-card-desc{font-size:12.5px;line-height:1.6;color:var(--ink);opacity:0.72;}
+
+  /* ---------- SERVICES (layout dividido) ---------- */
+  .svc{margin-top:0;display:grid;grid-template-columns:1fr 1.05fr;border-radius:32px;overflow:hidden;box-shadow:0 24px 50px -24px rgba(81,7,14,0.45);}
+  .svc-left{position:relative;min-height:500px;overflow:hidden;background:radial-gradient(circle at 25% 30%,var(--wine-soft),var(--wine-deep) 78%);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:44px;}
+  .svc-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:.22;filter:blur(5px);mix-blend-mode:luminosity;}
+  .svc-left::before,.svc-left::after{content:"";position:absolute;background:rgba(255,255,255,.3);}
+  .svc-left::before{left:0;right:0;top:34px;height:1px;}
+  .svc-left::after{left:34px;top:0;bottom:0;width:1px;}
+  .svc-dot{position:absolute;left:31px;top:31px;width:7px;height:7px;border-radius:50%;background:#fff;}
+  .svc-thumb{position:absolute;top:50%;left:50%;transform:translate(-50%,-62%);width:150px;aspect-ratio:1;overflow:hidden;border:1px solid rgba(255,255,255,.5);}
+  .svc-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;}
+  .svc-left h3{position:relative;font-family:var(--sans);font-weight:500;font-size:clamp(30px,4vw,40px);line-height:1.12;max-width:280px;}
+  .svc-right{position:relative;background:#f7e6e2;padding:56px 48px 48px;display:flex;flex-direction:column;justify-content:center;gap:30px;}
+  .svc-right::before{content:"";position:absolute;left:0;right:0;top:34px;height:1px;background:rgba(110,30,34,.25);}
+  .svc-toggle{display:inline-block;width:30px;height:16px;border:1.5px solid var(--wine);border-radius:100px;position:relative;margin-bottom:10px;background:rgba(110,30,34,.1);}
+  .svc-toggle::after{content:"";position:absolute;top:2px;left:2px;width:9px;height:9px;border-radius:50%;background:var(--wine);}
+  .svc-item h4{font-weight:700;font-size:19px;color:var(--wine);margin-bottom:6px;}
+  .svc-item p{font-size:14.5px;line-height:1.6;font-weight:500;color:var(--wine-soft);max-width:420px;}
+  .svc-item p strong{font-weight:700;color:var(--wine);}
+  .svc-right .btn{align-self:flex-start;}
+
+  @media (max-width:980px){
+    .svc{grid-template-columns:1fr;}
+    .svc-left{min-height:380px;}
+  }
+  @media (max-width:700px){
+    .portfolio{padding:64px 0 72px;}
+    .services{padding:60px 0 72px;}
+    .svc-left{padding:32px;}
+    .svc-right{padding:52px 28px 36px;}
+  }
+  @media (max-width:1100px){
+    .project-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:var(--wine) transparent;padding-bottom:16px;}
+    .project-grid::-webkit-scrollbar{height:5px;}
+    .project-grid::-webkit-scrollbar-thumb{background:var(--wine);border-radius:10px;}
+    .portfolio-card{flex:0 0 clamp(250px,34vw,330px);scroll-snap-align:start;}
+  }
+  @media (max-width:520px){
+    .portfolio-card{flex-basis:78vw;}
+  }
+  @media (prefers-reduced-motion:no-preference){ .project-grid{scroll-behavior:smooth;} }
+
+  /* ---------- VALUES ---------- */  .values{    background:var(--wine-deep);    padding:90px 0 110px;  }  .values-title{    font-family:var(--serif);font-weight:600;    font-size:clamp(28px,3.6vw,40px);    color:var(--cream);text-align:center;    margin-bottom:14px;line-height:1.15;  }  .values-subtitle{    font-family:'Quicksand',sans-serif;font-weight:600;    font-size:13px;letter-spacing:0.12em;text-transform:uppercase;    color:rgba(244,239,228,0.65);    text-align:center;margin-bottom:44px;  }  .values-grid{    display:grid;    grid-template-columns:1fr 1fr;    gap:2px;    background:rgba(244,239,228,0.14);  }  .value-card{    background:var(--wine);    padding:44px;    min-height:220px;    display:flex;flex-direction:column;justify-content:flex-start;    transition:background .3s ease;  }  .value-card:hover{background:var(--wine-soft);}  .value-num{    font-family:var(--serif);font-style:italic;    color:rgba(244,239,228,0.5);font-size:13px;margin-bottom:16px;  }  .value-card h3{    font-family:var(--serif);font-weight:600;    font-size:19px;letter-spacing:0.03em;    color:var(--cream);margin-bottom:16px;    text-transform:uppercase;  }  .value-card p{    font-size:14px;line-height:1.75;color:rgba(244,239,228,0.82);  }  @media (max-width:700px){    .values{padding:64px 0 72px;}    .values-grid{grid-template-columns:1fr;}    .value-card{padding:32px 28px;min-height:0;}  }
+  /* ---------- FOOTER CTA ---------- */  .final-cta{    background:var(--cream);    text-align:center;    padding:120px 24px;  }  @media (max-width:700px){    .final-cta{padding:80px 24px;}  }  .final-cta .editorial-title{margin-bottom:22px;}  .final-cta h2{    font-family:'Quicksand', sans-serif;font-weight:400;    font-size:clamp(17px,2vw,21px);    line-height:1.6;    letter-spacing:0.01em;    max-width:560px;margin:0 auto 40px;    color:var(--ink);    opacity:0.85;  }  .final-cta h2 em{color:var(--wine);font-style:normal;font-weight:600;}
+  /* ---------- EDITORIAL TITLE / SUBTITLE (reusable) ---------- */  .editorial-title{    font-family:'Playfair Display', serif;font-weight:800;    font-size:clamp(38px,5.4vw,64px);    line-height:1.1;    color:var(--wine);    letter-spacing:0.01em;    text-transform:uppercase;  }
+  footer{    background:var(--wine-deep);    color:var(--cream);    padding:60px 0 32px;  }  .footer-top{    display:flex;justify-content:space-between;align-items:flex-start;    flex-wrap:wrap;gap:40px;    padding-bottom:40px;border-bottom:1px solid rgba(244,239,228,0.15);  }  .footer-logo{font-family:'Quicksand',sans-serif;font-size:23px;letter-spacing:0.04em;}  .footer-logo .fw-normal{font-weight:400;}  .footer-logo .fw-bold{font-weight:800;}  .footer-cols{display:flex;gap:64px;flex-wrap:wrap;}  .footer-col h4{    font-size:11px;letter-spacing:0.1em;text-transform:uppercase;opacity:0.55;margin-bottom:16px;  }  .footer-col a{display:block;font-size:14px;margin-bottom:10px;opacity:0.85;transition:opacity .2s;}  .footer-col a:hover{opacity:1;}  .footer-bottom{    display:flex;justify-content:space-between;padding-top:26px;font-size:12px;opacity:0.55;flex-wrap:wrap;gap:10px;  }
+  /* mobile */  @media (max-width:860px){    .wrap{padding:0 24px;}  }</style></head><body>
+<section class="hero">
+  <h1 class="sr-only">Tech CoDesign — criação de sites e identidades visuais</h1>  <img class="hero-img" fetchpriority="high" decoding="async" src="https://ik.imagekit.io/zndtfytzo/Tech%20codesign.png?updatedAt=1785225338144" alt="Tech CoDesign"></section>
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="portfolio-head">
+      <h2 class="portfolio-title">Websites</h2>
+      <p class="portfolio-sub">Projetos assinados pela Tech CoDesign.</p>
+    </div>
+    </div>
+  <div class="portfolio-wide">
+    <div class="project-grid">
+      <article class="portfolio-card">
+        <div class="portfolio-card-img"><img src="https://ik.imagekit.io/zndtfytzo/IMG_20260801_164052_936.png" alt="Capa do rebranding criado para Agência Miranda" loading="lazy" decoding="async"></div>
+        <div class="portfolio-card-body">
+          <span class="portfolio-card-tag">Agência</span>
+          <div class="portfolio-card-title">Agência Miranda — Rebranding</div>
+          <p class="portfolio-card-desc">Reformulação completa da identidade visual, com nova estética alinhada ao posicionamento da marca.</p>
+        </div>
+      </article>
+      <article class="portfolio-card">
+        <div class="portfolio-card-img"><img src="https://ik.imagekit.io/zndtfytzo/Krave0000.png?updatedAt=1781644605141" alt="Capa do site criado para Krave Digital" loading="lazy" decoding="async"></div>
+        <div class="portfolio-card-body">
+          <span class="portfolio-card-tag">Agência</span>
+          <div class="portfolio-card-title">Krave Digital</div>
+          <p class="portfolio-card-desc">Site institucional para agência, com formulário de contato automatizado.</p>
+        </div>
+      </article>
+      <article class="portfolio-card">
+        <div class="portfolio-card-img"><img src="https://ik.imagekit.io/zndtfytzo/Sin%20t%C3%ADtulo-23.png?updatedAt=1781589218538" alt="Capa do site criado para Letícia Soares" loading="lazy" decoding="async"></div>
+        <div class="portfolio-card-body">
+          <span class="portfolio-card-tag">Advogada Previdenciarista</span>
+          <div class="portfolio-card-title">Letícia Soares</div>
+          <p class="portfolio-card-desc">Site profissional com foco em captação de clientes e credibilidade.</p>
+        </div>
+      </article>
+      <article class="portfolio-card">
+        <div class="portfolio-card-img img-fit"><img src="https://ik.imagekit.io/zndtfytzo/Captura%20de%20tela%202026-06-15%20234642.png?updatedAt=1781578051718" alt="Capa do site criado para PérolaAura" loading="lazy" decoding="async"></div>
+        <div class="portfolio-card-body">
+          <span class="portfolio-card-tag">Acessórios Artesanais</span>
+          <div class="portfolio-card-title">PérolaAura</div>
+          <p class="portfolio-card-desc">Vitrine online com identidade visual delicada e loja integrada.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="services">
+  <div class="wrap">
+    <div class="svc" id="about">
+      <div class="svc-left">
+        <img class="svc-bg" loading="lazy" decoding="async" src="https://ik.imagekit.io/zndtfytzo/IMG_20260801_164052_936.png" alt="">
+        <span class="svc-dot"></span>
+        <div class="svc-thumb"><img loading="lazy" decoding="async" src="https://ik.imagekit.io/zndtfytzo/IMG_20260801_164052_936.png" alt=""></div>
+        <h3>Serviços sob medida para o seu negócio</h3>
+      </div>
+      <div class="svc-right">
+        <div class="svc-item">
+          <span class="svc-toggle"></span>
+          <h4>Criações de sites</h4>
+          <p>Criamos sites <strong>seguros, responsivos e acessíveis</strong>. Automatizamos formulários para que os dados cheguem direto no Google Sheets ou no seu e-mail, e implementamos <strong>gateway de pagamento</strong> em seu site, de forma <strong>100% segura</strong>.</p>
+        </div>
+        <div class="svc-item">
+          <span class="svc-toggle"></span>
+          <h4>Identidades visuais</h4>
+          <p>Criamos <strong>identidades visuais</strong> após um <strong>estudo do seu negócio</strong> e de acordo com as necessidades dele.</p>
+        </div>
+        <div class="svc-item">
+          <span class="svc-toggle"></span>
+          <h4>Prazos</h4>
+          <p>Websites: <strong>15–25 dias</strong>. Identidades visuais: <strong>10–15 dias</strong>.</p>
+        </div>
+        <a href="https://wa.me/5581996273630?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20servi%C3%A7o%20da%20Tech%20CoDesign." target="_blank" rel="noopener" class="btn">Solicitar serviços</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values" id="values">  <div class="wrap">    <div class="values-title">Nossos processos são conduzidos de perto</div>    <div class="values-subtitle">Com atenção &amp; propósito</div>    <div class="values-grid">      <div class="value-card">        <span class="value-num">01</span>        <h3>Identidade Visual &amp; Posicionamento</h3>        <p>Desenvolvemos uma estética que traduz a essência da sua marca — comunicando autoridade e despertando confiança logo no primeiro contato.</p>      </div>      <div class="value-card">        <span class="value-num">02</span>        <h3>Criação de Sites</h3>        <p>Construímos sites seguros, responsivos e estrategicamente projetados para transformar visitantes em clientes reais.</p>      </div>      <div class="value-card">        <span class="value-num">03</span>        <h3>Testes &amp; Refinamento</h3>        <p>Cada detalhe de performance, usabilidade e formulários é revisado com precisão antes de qualquer lançamento.</p>      </div>      <div class="value-card">        <span class="value-num">04</span>        <h3>Lançamento &amp; Suporte</h3>        <p>Colocamos seu projeto no ar e seguimos ao seu lado, garantindo que tudo continue funcionando com excelência.</p>      </div>    </div>  </div></section>
+<section class="final-cta" id="work">  <div class="editorial-title">Vamos conversar</div>  <h2>Pronta para construir um negócio <em>que combine com você</em>?</h2>  <a href="https://wa.me/5581996273630" target="_blank" rel="noopener" class="btn">Solicite serviços</a></section>
+<footer id="contact">  <div class="wrap">    <div class="footer-top">      <div class="footer-logo"><span class="fw-normal">Tech</span><span class="fw-bold">CoDesign</span></div>      <div class="footer-cols">        <div class="footer-col">          <h4>Explorar</h4>          <a href="#about">Serviços</a>          <a href="#portfolio">Projetos</a>          <a href="#values">Nossos Valores</a>          <a href="#work">Vamos Conversar</a>        </div>        <div class="footer-col">          <h4>Conecte-se</h4>          <a href="https://instagram.com/techcodesign.com.br" target="_blank" rel="noopener">@techcodesign.com.br</a>          <a href="mailto:techcodesignltda@gmail.com">techcodesignltda@gmail.com</a>        </div>      </div>    </div>    <div class="footer-bottom">      <span>© 2026 Tech CoDesign. Todos os direitos reservados.</span>    </div>  </div></footer>
+
+</body></html>
